@@ -6,8 +6,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score,mean_squared_error
 
 #Initializing the dataframe
-stocks = pd.read_csv("Stocks_TCS2_date.csv")   #This is a dataframe
+try:
+    stocks = pd.read_csv("Stoks_TCS2_date.csv")   #This is a dataframe
 # print(stocks.head())
+except Exception as e:
+    raise FileNotFoundError
 
 stocks['Target'] = stocks['Open'].shift(-1)
 #More signals or we can call them lag features!
