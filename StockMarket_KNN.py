@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier  #There is also kneighbour re
 from sklearn.metrics import accuracy_score,classification_report
 from sklearn.preprocessing import StandardScaler
 
-stocks = pd.read_csv("Stocks_TCS2.csv")
+stocks = pd.read_csv("Stock-Market-ML\Stocks_TCS2.csv")
 #The lag features for model training
 stocks['lag_1'] = stocks['Open'].shift(1)
 stocks['lag_2'] = stocks['Open'].shift(2)

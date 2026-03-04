@@ -3,10 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
-from sklearn.metrics import r2_score,mean_squared_error
+from sklearn.metrics import r2_score,mean_squared_error, root_mean_squared_error
 from sklearn.preprocessing import StandardScaler
 
-stocks = pd.read_csv("Stocks_TCS2.csv")
+stocks = pd.read_csv("Stock-Market-ML\Stocks_TCS2.csv")
 
 stocks['Target'] = stocks['Open'].shift(-1)
 
@@ -34,4 +34,4 @@ knn.fit(x_train,y_train)
 y_pred = knn.predict(x_test)
 
 print(f"r2_score is : {r2_score(y_test,y_pred)}")
-print(f"mean squared error is : {mean_squared_error(y_test,y_pred)}")
+print(f"root mean squared error is : {root_mean_squared_error(y_test,y_pred)}")

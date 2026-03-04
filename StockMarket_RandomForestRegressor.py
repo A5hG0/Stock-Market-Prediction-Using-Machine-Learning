@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import r2_score,mean_squared_error
+from sklearn.metrics import r2_score,root_mean_squared_error
 import matplotlib.pyplot as plt
 
-stocks = pd.read_csv("Stocks_TCS2.csv")
+stocks = pd.read_csv("Stock-Market-ML/Stocks_TCS2.csv")
 #More signals or we can call them lag features!
 stocks['lag_1'] = stocks['Open'].shift(1)
 stocks['lag_2'] = stocks['Open'].shift(2)
@@ -30,4 +30,4 @@ forest.fit(x_train,y_train)
 y_pred = forest.predict(x_test)
 
 print(f"The r2 score is : {r2_score(y_test,y_pred)}")
-print(f"The mean squared error is : {mean_squared_error(y_test,y_pred)}")
+print(f"The mean squared error is : {root_mean_squared_error(y_test,y_pred)}")

@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score,mean_squared_error,classification_rep
 from sklearn.model_selection import train_test_split
 from sklearn import tree
 
-stocks = pd.read_csv("Stocks_TCS2.csv")
+stocks = pd.read_csv("Stock-Market-ML/Stocks_TCS2.csv")
 
 stocks['Target'] = (stocks['Open'].shift(-1) > stocks['Open']).astype(int)
 #More signals or we can call them lag features!

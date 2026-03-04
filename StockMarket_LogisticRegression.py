@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 # import seaborn as sea
 
 #Reading data
-stocks = pd.read_csv("Stocks_TCS2.csv")
+stocks = pd.read_csv("Stock-Market-ML/Stocks_TCS2.csv")
 
 #More signals or we can call them lag features!
 stocks['lag_1'] = stocks['Open'].shift(1)
